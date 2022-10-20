@@ -1,61 +1,61 @@
 class Todo {
-	#completed = false;
-	#text = "";
+  #completed = false;
+  #text = "";
 
-	constructor(text = "") {
-		this.#text = text.toString();
-	}
+  constructor(text = "") {
+    this.#text = text.toString();
+  }
 
-	get text() {
-		return this.#text;
-	}
+  get text() {
+    return this.#text;
+  }
 
-	set text(text = "") {
-		this.#text = text.toString();
-	}
+  set text(text = "") {
+    this.#text = text.toString();
+  }
 
-	isComplete() {
-		return this.#completed;
-	}
+  isComplete() {
+    return this.#completed;
+  }
 
-	markComplete() {
-		this.#completed = true;
-	}
+  markComplete() {
+    this.#completed = true;
+  }
 
-	markIncomplete() {
-		this.#completed = false;
-	}
+  markIncomplete() {
+    this.#completed = false;
+  }
 
-	toString() {
-		return this.#text;
-	}
+  toString() {
+    return this.#text;
+  }
 }
 
 class TodoList {
-	static #count = 0;
-	#name = "";
-	#todos = [];
+  static #count = 0;
+  #name = "";
+  #todos = [];
 
-	constructor(name = "", ...args) {
-		if (name) {
-			this.#name = name.toString();
-		} else {
-			this.#name = `Todo List #${++TodoList.#count}`;
-		}
-		args.flat().forEach(todo => {
-			this.add(todo);
-		});
-	}
+  constructor(name = "", ...args) {
+    if (name) {
+      this.#name = name.toString();
+    } else {
+      this.#name = `Todo List #${++TodoList.#count}`;
+    }
+    args.flat().forEach(todo => {
+      this.add(todo);
+    });
+  }
 
-	get todos() {
-		return this.#todos;
-	}
-	
-	add(todo) {
-		if (todo instanceof Todo)  {
-			this.#todos = [...this.#todos, todo];
-		} else {
-			throw "argument must be instance of Todo"
-		}
-	}
+  get todos() {
+    return this.#todos;
+  }
+
+  add(todo) {
+    if (todo instanceof Todo)  {
+      this.#todos = [...this.#todos, todo];
+    } else {
+      throw "argument must be instance of Todo"
+    }
+  }
 }
