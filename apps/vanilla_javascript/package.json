@@ -1,0 +1,15 @@
+{
+  "name": "vanilla_javascript",
+  "version": "1.0.0",
+  "description": "TODOS",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "author": "Chris Beddome",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.3.1"
+  }
+}

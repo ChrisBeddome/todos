@@ -1,37 +1,4 @@
-class Todo {
-  #completed = false;
-  #text = "";
-
-  constructor(text = "") {
-    this.#text = text.toString();
-  }
-
-  get text() {
-    return this.#text;
-  }
-
-  set text(text = "") {
-    this.#text = text.toString();
-  }
-
-  isComplete() {
-    return this.#completed;
-  }
-
-  markComplete() {
-    this.#completed = true;
-  }
-
-  markIncomplete() {
-    this.#completed = false;
-  }
-
-  toString() {
-    return this.#text;
-  }
-}
-
-class TodoList {
+export default class TodoList {
   static #count = 0;
   #name = "";
   #todos = [];
@@ -45,6 +12,10 @@ class TodoList {
     args.flat().forEach(todo => {
       this.add(todo);
     });
+  }
+
+  get name() {
+    return this.#name
   }
 
   get todos() {
