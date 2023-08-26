@@ -1,4 +1,4 @@
-import todo from "../../src/models/todo.js"
+import Todo from "../../src/models/todo.js"
 
 describe("Todo", () => {
   let todo;
