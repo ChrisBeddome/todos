@@ -17,7 +17,9 @@ describe("Todo", () => {
     });
 
     it("throws error when given non-string value", () => {
-      callWithNonStrings((val) => new Todo(val), 'toThrow');
+      callWithNonStrings(val => {
+        expect(() => new Todo(val)).toThrow()
+      });
     });
   });
 
@@ -35,7 +37,9 @@ describe("Todo", () => {
     });
 
     it("throws error when passed non-string value", () => {
-      callWithNonStrings((val) => todo.text = val, 'toThrow');
+      callWithNonStrings(val => {
+        expect(() => todo.text = val).toThrow()
+      });
     });
 
   });
@@ -50,10 +54,10 @@ describe("Todo", () => {
     });
   });
 
-  const callWithNonStrings = (fn, expectation) => {
+  const callWithNonStrings = (fn) => {
     const nonStrings = [ 1, true, {a: 1}, [1,2,3], null];
     nonStrings.forEach(val => {
-      expect(() => fn(val))[expectation]()
+      fn(val)
     });
   };
 
