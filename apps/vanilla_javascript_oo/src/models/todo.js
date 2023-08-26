@@ -3,7 +3,10 @@ export default class Todo {
   #text = "";
 
   constructor(text = "") {
-    this.#text = text.toString();
+    if (typeof text !== "string") {
+      throw new Error("text must be of type string");
+    }
+    this.#text = text;
   }
 
   get text() {
@@ -11,7 +14,10 @@ export default class Todo {
   }
 
   set text(text = "") {
-    this.#text = text.toString();
+    if (typeof text !== "string") {
+      throw new Error("text must be of type string");
+    }
+    this.#text = text
   }
 
   isComplete() {
