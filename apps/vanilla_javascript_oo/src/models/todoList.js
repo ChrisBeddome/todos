@@ -1,11 +1,15 @@
+import Todo from "../../src/models/todo.js"
+
 export default class TodoList {
   static #count = 0;
   #name = "";
   #todos = [];
 
   constructor(name = "", ...args) {
-    if (name) {
-      this.#name = name.toString();
+    if (typeof name !== "string") {
+      throw new Error("text must be of type string");
+    } else if (name) {
+      this.#name = name;
     } else {
       this.#name = `Todo List #${++TodoList.#count}`;
     }
