@@ -4,6 +4,7 @@ export default class TodoList {
   static #count = 0;
   #name = "";
   #todos = [];
+  #createdAt = new Date();
 
   constructor(name = "", ...args) {
     if (typeof name !== "string") {
@@ -24,6 +25,10 @@ export default class TodoList {
 
   get todos() {
     return this.#todos;
+  }
+
+  get createdAt() {
+    return this.#createdAt;
   }
 
   add(todo) {

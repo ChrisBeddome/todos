@@ -1,12 +1,14 @@
 export default class Todo {
   #completed = false;
   #text = "";
+  #createdAt = null;
 
   constructor(text = "") {
     if (typeof text !== "string") {
       throw new Error("text must be of type string");
     }
     this.#text = text;
+    this.#createdAt = new Date();
   }
 
   get text() {
@@ -18,6 +20,10 @@ export default class Todo {
       throw new Error("text must be of type string");
     }
     this.#text = text
+  }
+
+  get createdAt() {
+    return this.#createdAt;
   }
 
   isComplete() {
