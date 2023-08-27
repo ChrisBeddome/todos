@@ -5,6 +5,7 @@ export default class TodoList {
   #name = "";
   #todos = [];
   #createdAt = new Date();
+  #id = Math.floor((Math.random() * 99999999999999)) //good enough for our purposes
 
   constructor(name = "", ...args) {
     if (typeof name !== "string") {

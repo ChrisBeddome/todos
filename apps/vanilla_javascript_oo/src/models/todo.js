@@ -1,14 +1,14 @@
 export default class Todo {
   #completed = false;
   #text = "";
-  #createdAt = null;
+  #createdAt = new Date();
+  #id = Math.floor((Math.random() * 99999999999999)) //good enough for our purposes
 
   constructor(text = "") {
     if (typeof text !== "string") {
       throw new Error("text must be of type string");
     }
     this.#text = text;
-    this.#createdAt = new Date();
   }
 
   get text() {
