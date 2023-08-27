@@ -8,7 +8,7 @@ export default class Todo {
     if (typeof text !== "string") {
       throw new Error("text must be of type string");
     }
-    this.#text = text;
+    this.text = text;
   }
 
   get id() {
@@ -43,7 +43,7 @@ export default class Todo {
   }
 
   toString() {
-    return this.#text;
+    return this.text;
   }
 }
 
