@@ -2,7 +2,7 @@ import Todo from "../../src/views/todo.js"
 
 const validOptions = {
   id: 1,
-  completed: false,
+  isComplete: false,
   text: "test",
   createdAt: new Date()
 }
@@ -29,7 +29,7 @@ describe("Todo View", () => {
     it("should have specific text content representing to todo data", () => {
       expect(todo.render().textContent).toEqual("test --- incomplete");
       expect(
-        new Todo({...validOptions, text: "hello", completed: true})
+        new Todo({...validOptions, text: "hello", isComplete: true})
           .render()
           .textContent
       )

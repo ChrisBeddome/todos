@@ -26,7 +26,7 @@ describe("Todo", () => {
   describe("defaults", () => {
     it("has default text and is incomplete", () => {
       expect(todo.text).toBe("");
-      expect(todo.isComplete()).toBe(false);
+      expect(todo.isComplete).toBe(false);
     });
   });
 
@@ -47,10 +47,10 @@ describe("Todo", () => {
   describe("complete getter/setter", () => {
     it("can mark as complete and incomplete", () => {
       todo.markComplete();
-      expect(todo.isComplete()).toBe(true);
+      expect(todo.isComplete).toBe(true);
 
       todo.markIncomplete();
-      expect(todo.isComplete()).toBe(false);
+      expect(todo.isComplete).toBe(false);
     });
   });
 

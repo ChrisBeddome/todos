@@ -1,6 +1,6 @@
 export default class Todo {
   #id = Math.floor((Math.random() * 99999999999999)) //good enough for our purposes
-  #completed = false;
+  #isComplete = false;
   #text = "";
   #createdAt = new Date();
 
@@ -30,16 +30,16 @@ export default class Todo {
     return this.#createdAt;
   }
 
-  isComplete() {
-    return this.#completed;
+  get isComplete() {
+    return this.#isComplete;
   }
 
   markComplete() {
-    this.#completed = true;
+    this.#isComplete = true;
   }
 
   markIncomplete() {
-    this.#completed = false;
+    this.#isComplete = false;
   }
 
   toString() {
