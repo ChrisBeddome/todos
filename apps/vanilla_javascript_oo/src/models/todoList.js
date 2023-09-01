@@ -2,7 +2,7 @@ import Todo from "../../src/models/todo.js"
 
 export default class TodoList {
   static #count = 0;
-  #id = Math.floor((Math.random() * 99999999999999)) //good enough for our purposes
+  #id = Math.floor((Math.random() * 99999999999999)); //good enough for our purposes
   #name = "";
   #todos = [];
   #createdAt = new Date();

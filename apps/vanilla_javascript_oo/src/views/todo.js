@@ -2,10 +2,9 @@ export default class Todo {
   #id;
   #isComplete;
   #text;
-  #createdAt;
 
   constructor(options) {
-    const requiredOptions = ["id", "isComplete", "text", "createdAt"];
+    const requiredOptions = ["id", "isComplete", "text"];
     if (!options) {
       throw new Error(`options required: ${requiredOptions.join(", ")}`);
     }
@@ -17,13 +16,13 @@ export default class Todo {
     this.#id = options.id;
     this.#isComplete = options.isComplete;
     this.#text = options.text;
-    this.createdAt = options.createdAt;
   }
   
   render() {
-    const container = document.createElement("div");
+    const li = document.createElement("li");
+    li.classList.add("todo");
     const content = `${this.#text} --- ${this.#isComplete ? "complete" : "incomplete"}`;
-    container.textContent = content;
-    return container;
+    li.textContent = content;
+    return li;
   }
 }

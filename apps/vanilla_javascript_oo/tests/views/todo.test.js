@@ -4,7 +4,6 @@ const validOptions = {
   id: 1,
   isComplete: false,
   text: "test",
-  createdAt: new Date()
 }
 
 describe("Todo View", () => {
@@ -23,8 +22,8 @@ describe("Todo View", () => {
     beforeEach(() => {
       todo = new Todo(validOptions);
     });
-    it("should return an HTMLDivElement element", () => {
-      expect(todo.render()).toBeInstanceOf(HTMLDivElement);
+    it("should return an HTMLLIElement element", () => {
+      expect(todo.render()).toBeInstanceOf(HTMLLIElement);
     });
     it("should have specific text content representing to todo data", () => {
       expect(todo.render().textContent).toEqual("test --- incomplete");
